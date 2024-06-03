@@ -1,0 +1,14 @@
+ scanf("%s", ch);
+ if (strcmp(ch, "y") == 0 || strcmp(ch, "Y") == 0) {
+  menu();
+ }
+ else exit(0);
+}
+ 
+void ShowAll() {
+ system("cls");
+ mysql_init(&mysql);
+ mysql_query(&mysql, "set names 'utf8'");
+ if (!mysql_real_connect(&mysql, "localhost", "root", "密码", "db_book", 0, NULL, 0))
+  printf("\ncan't connect db_book!\n");
+ else
