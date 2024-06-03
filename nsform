@@ -1,0 +1,7 @@
+QGraphicsTransform *pointerTransform;
+pointerTransform = new QGraphicsTransform(pointer);
+pointer->setTransform(pointerTransform);
+void MainWindow::updateTemp(int temp) {
+    ui->tempLabel->setText(QString("Temp: %1℃").arg(temp));
+    pointerTransform->setRotation(-45 + temp * 270 / 100);
+}
